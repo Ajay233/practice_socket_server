@@ -1,7 +1,7 @@
 const app = require('express')();
 const http = require('http').Server(app)
 const port = 8090;
-const url = "https://ajays-practice-chat-app.herokuapp.com/"
+const url = "https://ajays-practice-chat-app.herokuapp.com"
 // const url = "http://localhost:3000"
 const io = require('socket.io')(http, {
   cors: {
@@ -39,7 +39,8 @@ io.on('connection', (socket) => {
   })
 
   socket.on('disconnect', () => {
-    console.log('a user disconnected')
+    console.log('a user disconnected');
+    delete users[socket.id]
   })
 
 })
