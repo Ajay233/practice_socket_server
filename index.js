@@ -1,8 +1,8 @@
 const app = require('express')();
 const http = require('http').Server(app)
 const port = 8090;
-const url = "https://ajays-practice-chat-app.herokuapp.com"
-// const url = "http://localhost:3000"
+// const url = "https://ajays-practice-chat-app.herokuapp.com"
+const url = "http://localhost:3000"
 const io = require('socket.io')(http, {
   cors: {
     origin: url,
